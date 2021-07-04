@@ -1,28 +1,26 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_core/components/custom_suffix_icon.dart';
 import 'package:flutter_core/components/default_button.dart';
 import 'package:flutter_core/components/form_error.dart';
-import 'package:flutter_core/screens/forgot_password/forgot_password_screen.dart';
-import 'package:flutter_core/screens/login_success/login_success_screen.dart';
+import 'package:flutter_core/screens/complete_profile/complete_profile_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
-class SignForm extends StatefulWidget {
-  const SignForm({ Key? key }) : super(key: key);
+
+class SignUpForm extends StatefulWidget {
+  const SignUpForm({ Key? key }) : super(key: key);
 
   @override
-  _SignFormState createState() => _SignFormState();
+  _SignUpFormState createState() => _SignUpFormState();
 }
 
-class _SignFormState extends State<SignForm> {
+class _SignUpFormState extends State<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
-  final List<String> errors = [];
   late String email;
-  late String password;
-  bool remember = false;
+  String password = "";
+  String confirmPassword = "";
+  final List<String> errors = [];
 
   void addError({required String error}){
     if(!errors.contains(error)){
@@ -47,57 +45,61 @@ class _SignFormState extends State<SignForm> {
       child: Column(
         children: [
           buildEmailFormField(),
-          SizedBox(
-            height: getProportionateScreenHeight(30),
-            // height: SizeConfig.screenHeight * 0.05,
-          ),
-          buildPasswordFormField(),
-          SizedBox(
-            height: getProportionateScreenHeight(30),
-            // height: SizeConfig.screenHeight * 0.03,
-          ),
+          SizedBox(height: getProportionateScreenHeight(30)),
+          buildPassFormField(),
+          SizedBox(height: getProportionateScreenHeight(30)),
+          buildConfPassFormField(),
           FormError(errors: errors),
-          Row(
-            children: [
-              Checkbox(
-                value: remember, 
-                activeColor: kPrimaryColor,
-                onChanged: (value) {
-                  setState((){
-                    remember = value!;
-                  });
-                },
-              ),
-              Text("Remember me"),
-              Spacer(),
-              GestureDetector(
-                onTap: () => Navigator.pushNamed(context, ForgotPasswordScreen.routeName),
-                child: Text(
-                  "Forgot Password",
-                  style: TextStyle(decoration: TextDecoration.underline),
-                ),
-              )
-            ],
-          ),
-          SizedBox(
-            height: getProportionateScreenHeight(20), 
-          ),
+          SizedBox(height: getProportionateScreenHeight(30)),
           DefaultButton(
             text: "Continue", 
             press: (){
               if(_formKey.currentState!.validate()){
-                _formKey.currentState!.save();
-                //if all are valid then go to success screen
-                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                //Go to complete profile page
+                Navigator.pushNamed(context, CompleteProfileScreen.routeName);
+              }else{
+                Navigator.pushNamed(context, CompleteProfileScreen.routeName);
               }
             },
           ),
         ],
-      )
+      ),
     );
   }
 
-  TextFormField buildPasswordFormField() {
+
+  TextFormField buildConfPassFormField() {
+    return TextFormField(
+      obscureText: true,
+      onSaved: (newValue) => confirmPassword = newValue!,
+      onChanged: (value) {
+        removeError(error: kMatchPassError);
+        if(value.isNotEmpty){
+          removeError(error: kConfPassNullError);
+        }
+        confirmPassword = value;
+        return null;
+      },
+      validator: (value) {
+        if(value!.isEmpty){
+          addError(error: kConfPassNullError);
+          return "";
+        }
+        if(password != confirmPassword){
+          addError(error: kMatchPassError);
+          return "";
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelText: "ConfirmPassword",
+        hintText: "Re-enter your password",
+        suffixIcon: CustomSuffixIcon(svgIcon: 'assets/icons/Lock.svg'),
+      ),
+    );
+  }
+
+  TextFormField buildPassFormField() {
     return TextFormField(
       obscureText: true,
       onSaved: (newValue) => password = newValue!,
@@ -108,6 +110,7 @@ class _SignFormState extends State<SignForm> {
         if(value.length >= 8){
           removeError(error: kShortPassError);
         }
+        password = value;
         return null;
       },
       validator: (value) {
