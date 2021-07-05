@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_core/components/custom_suffix_icon.dart';
 import 'package:flutter_core/components/default_button.dart';
 import 'package:flutter_core/components/form_error.dart';
+import 'package:flutter_core/screens/otp/otp_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -58,6 +59,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             press: (){
               if (_formKey.currentState!.validate()){
                 // Go to OPT screen
+                Navigator.pushNamed(context, OtpScreen.routeName);
               }
             },
           ),
