@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_core/components/custom_suffix_icon.dart';
 import 'package:flutter_core/components/default_button.dart';
