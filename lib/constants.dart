@@ -31,3 +31,21 @@ const String kConfPassNullError = "Please re-enter your password";
 const String kNameNullError = "Please Enter your name";
 const String kPhoneNumberNullError = "Please Enter your photo number";
 const String kAddressNullError = "Please Enter your address";
+
+final otpInputDecoration = InputDecoration(
+  contentPadding: EdgeInsets.symmetric(
+    vertical: getProportionateScreenWidth(15)
+  ),
+  enabledBorder: outlineInputBorder(),
+  focusedBorder: outlineInputBorder(),
+  border: outlineInputBorder(),
+);
+
+OutlineInputBorder outlineInputBorder() {
+  return OutlineInputBorder(
+  borderRadius: BorderRadius.circular(15),
+  borderSide: BorderSide(
+    color: kTextColor
+  ),
+);
+}
