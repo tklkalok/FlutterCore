@@ -1,0 +1,43 @@
+{
+    "languageCode": "en",
+    "language" : "English",
+    "@language": {
+        "description": "English Language"
+    },
+
+    "@___SPLASH_PAGE___":{},
+    "splashTitle": "TOKOTO",
+    "splashPageViewTitle1": "Welcome to Tokoto, Let's shop!",
+    "splashPageViewTitle2": "We help people connect with store \naround United State of America",
+    "splashPageViewTitle3": "We show the easy way to shop. \nJust stay at home with us",
+    "splashContinueBtn": "Continue",
+
+    "@___SIGN_IN_PAGE___":{},
+    "signInAppBarTitle": "Sign In",
+    "signInBodyTitle": "Welcome Back",
+    "signInBodySubTitle": "Sign in with your email and password \nor continue with social media",
+    "signInEmailTitle": "Email",
+    "signInEmailPlaceholder": "Enter your emal",
+    "signInPasswordTitle": "Password",
+    "signInPasswordPlaceholder": "Enter your password",
+    "signInRememberMe": "Remember me",
+    "signInForgotPassword": "Forgot Password",
+    "signInContinue": "Continue",
+    "signInDontHaveAccount": "Don't have an account?",
+    "signInSignUp": "Sign Up",
+
+    "@___ERROR_MESSAGE___":{},
+    "kEmailNullError": "Please Enter your Email",
+    "kInvalidEmailError": "Please Enter Valid Email",
+    "kPassNullError": "Plase Enter your password",
+    "kShortPassError": "Password is too short",
+    "kMatchPassError": "Passwords don't match",
+    "kConfPassNullError": "Please re-enter your password",
+    "kNameNullError": "Please Enter your name",
+    "kPhoneNumberNullError": "Please Enter your phone number",
+    "kAddressNullError": "Please Enter your address",
+
+    "@___LOGIN_SUCCESS_PAGE___":{},
+    "loginSuccess": "Login Success",
+    "loginBackToHome": "Back to home"
+}

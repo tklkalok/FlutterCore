@@ -29,7 +29,7 @@ const String kMatchPassError = "Passwords don't match";
 const String kConfPassNullError = "Please re-enter your password";
 
 const String kNameNullError = "Please Enter your name";
-const String kPhoneNumberNullError = "Please Enter your photo number";
+const String kPhoneNumberNullError = "Please Enter your phone number";
 const String kAddressNullError = "Please Enter your address";
 
 final otpInputDecoration = InputDecoration(

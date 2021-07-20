@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_core/constants.dart';
 import 'package:flutter_core/screens/sign_in/sign_in_screen.dart';
 import 'package:flutter_core/size_config.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import '../components/splash_content.dart';
 import '../../../components/default_button.dart';
@@ -15,22 +16,24 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   int currentPage = 0;
-  List splashData = [
-    {
-      "text": "Welcome to Tokoto, Let's shop!",
-      "image": "assets/images/splash_1.png"
-    },
-    {
-      "text": "We help people connect with store \naround United State of America",
-      "image": "assets/images/splash_2.png"
-    },
-    {
-      "text": "We show the easy way to shop. \nJust stay at home with us",
-      "image": "assets/images/splash_3.png"
-    },
-  ];
+
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
+    List splashData = [
+      {
+        "textCode": T.splashPageViewTitle1,
+        "image": "assets/images/splash_1.png"
+      },
+      {
+        "textCode": T.splashPageViewTitle2,
+        "image": "assets/images/splash_2.png"
+      },
+      {
+        "textCode": T.splashPageViewTitle3,
+        "image": "assets/images/splash_3.png"
+      },
+    ];
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
@@ -47,7 +50,8 @@ class _BodyState extends State<Body> {
                 itemCount: splashData.length,
                 itemBuilder: (context, index) => SplashContent(
                   image: splashData[index]["image"],
-                  text: splashData[index]["text"]
+                  text: splashData[index]["textCode"]
+                  // text: T.['splashPageViewTitle' + index.toString()]
                 ),
               ),
             ),
@@ -69,7 +73,7 @@ class _BodyState extends State<Body> {
                     ),
                     Spacer(flex: 3),
                     DefaultButton(
-                      text: "Continue",
+                      text: T.splashContinueBtn,
                       press: () {
                         Navigator.pushNamed(context, SignInScreen.routeName);
                       }

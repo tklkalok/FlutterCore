@@ -1,0 +1,43 @@
+{
+    "languageCode": "zh",
+    "language" : "Traditional Chinese",
+    "@language": {
+        "description": "Traditional Chinese Language"
+    },
+
+    "@___SPLASH_PAGE___":{},
+    "splashTitle": "東京闇鴉",
+    "splashPageViewTitle1": "歡迎來到東京闇鴉，讓我們\n一起購物吧!",
+    "splashPageViewTitle2": "我們幫助人們與美國各地的商店聯系。",
+    "splashPageViewTitle3": "我們展示了簡單的購物方式。\n只要和我們一起呆在家里",
+    "splashContinueBtn": "繼續",
+
+    "@___SIGN_IN_PAGE___":{},
+    "signInAppBarTitle": "登錄",
+    "signInBodyTitle": "歡迎回來",
+    "signInBodySubTitle": "用你的電子郵件和密碼登錄\n或繼續使用社交媒體",
+    "signInEmailTitle": "電郵",
+    "signInEmailPlaceholder": "輸入你的電郵",
+    "signInPasswordTitle": "密碼",
+    "signInPasswordPlaceholder": "輸入你的密碼",
+    "signInRememberMe": "記住我",
+    "signInForgotPassword": "忘記密碼",
+    "signInContinue": "繼續",
+    "signInDontHaveAccount": "沒有賬戶?",
+    "signInSignUp": "注冊",
+
+    "@___ERROR_MESSAGE___":{},
+    "kEmailNullError": "請輸入您的電郵",
+    "kInvalidEmailError": "請輸入有效的電郵",
+    "kPassNullError": "請輸入您的密碼",
+    "kShortPassError": "密碼太短",
+    "kMatchPassError": "密碼不匹配",
+    "kConfPassNullError": "請重新輸入你的密碼",
+    "kNameNullError": "請輸入你的名字",
+    "kPhoneNumberNullError": "請輸入你的電話號碼",
+    "kAddressNullError": "請輸入您的地址",
+
+    "@___LOGIN_SUCCESS_PAGE___":{},
+    "loginSuccess": "登錄成功",
+    "loginBackToHome": "進入首頁"
+}

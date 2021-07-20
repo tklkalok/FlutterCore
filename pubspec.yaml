@@ -25,6 +25,9 @@ dependencies:
     sdk: flutter
   flutter_svg: ^0.20.0-nullsafety.3
   provider: ^4.3.1
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -87,3 +90,4 @@ flutter:
           weight: 300
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  generate: true

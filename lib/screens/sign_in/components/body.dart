@@ -3,12 +3,14 @@ import 'package:flutter_core/components/no_account_text.dart';
 import 'package:flutter_core/components/social_card.dart';
 import 'package:flutter_core/screens/sign_in/components/sign_form.dart';
 import 'package:flutter_core/size_config.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 class Body extends StatelessWidget {
   const Body({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
@@ -19,7 +21,7 @@ class Body extends StatelessWidget {
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
                 Text(
-                  "Welcome Back",
+                  T.signInBodyTitle,
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: getProportionateScreenWidth(28),
@@ -27,7 +29,7 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "Sign in with you email and password \nor continue with social media",
+                  T.signInBodySubTitle,
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),

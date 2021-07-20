@@ -4,6 +4,7 @@ import 'package:flutter_core/components/default_button.dart';
 import 'package:flutter_core/components/form_error.dart';
 import 'package:flutter_core/screens/forgot_password/forgot_password_screen.dart';
 import 'package:flutter_core/screens/login_success/login_success_screen.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -40,6 +41,7 @@ class _SignFormState extends State<SignForm> {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Form(
       key: _formKey,
       child: Column(
@@ -66,12 +68,12 @@ class _SignFormState extends State<SignForm> {
                   });
                 },
               ),
-              Text("Remember me"),
+              Text(T.signInRememberMe),
               Spacer(),
               GestureDetector(
                 onTap: () => Navigator.pushNamed(context, ForgotPasswordScreen.routeName),
                 child: Text(
-                  "Forgot Password",
+                  T.signInForgotPassword,
                   style: TextStyle(decoration: TextDecoration.underline),
                 ),
               )
@@ -81,7 +83,7 @@ class _SignFormState extends State<SignForm> {
             height: getProportionateScreenHeight(20), 
           ),
           DefaultButton(
-            text: "Continue", 
+            text: T.signInContinue, 
             press: (){
               if(_formKey.currentState!.validate()){
                 _formKey.currentState!.save();
@@ -96,63 +98,65 @@ class _SignFormState extends State<SignForm> {
   }
 
   TextFormField buildPasswordFormField() {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return TextFormField(
       obscureText: true,
       onSaved: (newValue) => password = newValue!,
       onChanged: (value) {
         if(value.isNotEmpty){
-          removeError(error: kPassNullError);
+          removeError(error: T.kPassNullError);
         }
         if(value.length >= 8){
-          removeError(error: kShortPassError);
+          removeError(error: T.kShortPassError);
         }
         return null;
       },
       validator: (value) {
         if(value!.isEmpty){
-          addError(error: kPassNullError);
+          addError(error: T.kPassNullError);
           return "";
         }
         if(value.length < 8){
-          addError(error: kShortPassError);
+          addError(error: T.kShortPassError);
           return "";
         }
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Password",
-        hintText: "Enter you password",
+        labelText: T.signInPasswordTitle,
+        hintText: T.signInPasswordPlaceholder,
         suffixIcon: CustomSuffixIcon(svgIcon: 'assets/icons/Lock.svg'),
       ),
     );
   }
 
   TextFormField buildEmailFormField() {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => email = newValue!,
       onChanged: (value) {
         if (value.isNotEmpty){
-          removeError(error: kEmailNullError);
+          removeError(error: T.kEmailNullError);
         }
         if (emailValidatorRegExp.hasMatch(value)){
-          removeError(error: kInvalidEmailError);
+          removeError(error: T.kInvalidEmailError);
         }
       },
       validator: (value) {
         if(value!.isEmpty){
-          addError(error: kEmailNullError);
+          addError(error: T.kEmailNullError);
           return "";
         }
         if(!emailValidatorRegExp.hasMatch(value)){
-          addError(error: kInvalidEmailError);
+          addError(error: T.kInvalidEmailError);
           return "";
         }
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Email",
-        hintText: "Enter you email",
+        labelText: T.signInEmailTitle,
+        hintText: T.signInEmailPlaceholder,
         suffixIcon: CustomSuffixIcon(svgIcon: 'assets/icons/Mail.svg'),
       ),
     );

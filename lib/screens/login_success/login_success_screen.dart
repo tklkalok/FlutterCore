@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
+
 import './components/body.dart';
 
 class LoginSuccessScreen extends StatelessWidget {
@@ -7,10 +9,11 @@ class LoginSuccessScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
         leading: SizedBox(),
-        title: Text(' Login Success'),
+        title: Text(T.loginSuccess),
         centerTitle: true,
       ),
       body: Body()
