@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_core/constants.dart';
 import 'package:flutter_core/size_config.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import 'otp_form.dart';
 
@@ -9,6 +10,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return SizedBox(
       width: double.infinity,
       child: Padding(
@@ -18,11 +20,11 @@ class Body extends StatelessWidget {
             children: [
               SizedBox(height: SizeConfig.screenHeight * 0.05),
               Text(
-                "OTP Verification",
+                T.otpTitle,
                 style: headingStyle
               ),
-              Text("We sent your code to +1 898 860 ***"),
-              buildTimer(),
+              Text(T.otpSubTitle),
+              buildTimer(context),
               SizedBox(height: SizeConfig.screenHeight * 0.15),
               OtpForm(),
               SizedBox(height: SizeConfig.screenHeight * 0.1),
@@ -31,7 +33,7 @@ class Body extends StatelessWidget {
                   //resend otp here
                 },
                 child: Text(
-                  "Resend OTP Code",
+                  T.otpResend,
                   style: TextStyle(
                     decoration: TextDecoration.underline,
                   ),
@@ -44,23 +46,29 @@ class Body extends StatelessWidget {
     );
   }
 
-  Row buildTimer() {
+  Row buildTimer(context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("This code will expired in "),
-            TweenAnimationBuilder(
-              tween: Tween(begin: 30.0, end: 0), 
-              duration: Duration(seconds: 30), 
-              builder: (context, value, child) {
-                return Text(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        //Text("This code will expired in "),
+        TweenAnimationBuilder(
+          tween: Tween(begin: 30.0, end: 0), 
+          duration: Duration(seconds: 30), 
+          builder: (context, value, child) {
+            return Row(
+              children: [
+                Text(T.otpExpire),
+                Text(
                   '00:${double.parse((value.toString())).toInt()}',
                   style: TextStyle(color: kPrimaryColor),
-                );
-              },
-              onEnd: () {},
-            ),
-          ],
-        );
+                ),
+              ],
+            );
+          },
+          onEnd: () {},
+        ),
+      ],
+    );
   }
 }

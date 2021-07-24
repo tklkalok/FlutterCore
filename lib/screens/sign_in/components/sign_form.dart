@@ -127,6 +127,7 @@ class _SignFormState extends State<SignForm> {
         hintText: T.signInPasswordPlaceholder,
         suffixIcon: CustomSuffixIcon(svgIcon: 'assets/icons/Lock.svg'),
       ),
+      initialValue: "123456789"
     );
   }
 
@@ -159,6 +160,7 @@ class _SignFormState extends State<SignForm> {
         hintText: T.signInEmailPlaceholder,
         suffixIcon: CustomSuffixIcon(svgIcon: 'assets/icons/Mail.svg'),
       ),
+      initialValue: "ben@gmail.com"
     );
   }
 }

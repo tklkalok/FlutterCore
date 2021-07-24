@@ -3,6 +3,7 @@ import 'package:flutter_core/components/custom_suffix_icon.dart';
 import 'package:flutter_core/components/default_button.dart';
 import 'package:flutter_core/components/form_error.dart';
 import 'package:flutter_core/screens/otp/otp_screen.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -41,6 +42,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Form(
       key: _formKey,
       child: Column(
@@ -55,7 +57,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           FormError(errors: errors),
           SizedBox( height: getProportionateScreenHeight(40)),
           DefaultButton(
-            text: 'Continue', 
+            text: T.completeProfileContinue, 
             press: (){
               if (_formKey.currentState!.validate()){
                 // Go to OPT screen
@@ -69,81 +71,85 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
   }
 
   TextFormField buildAddressFormField() {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return TextFormField(
           onSaved: (newValue) => address = newValue!,
           onChanged: (value) {
             if (value.isNotEmpty){
-              removeError(error: kAddressNullError);
+              removeError(error: T.kAddressNullError);
             }
           },
           validator: (value) {
             if(value!.isEmpty){
-              addError(error: kAddressNullError);
+              addError(error: T.kAddressNullError);
               return "";
             }
             return null;
           },
           decoration: InputDecoration(
-            labelText: "Address",
-            hintText: "Enter your address",
+            labelText: T.completeProfileAddress,
+            hintText: T.completeProfileAddressPlaceholder,
             suffixIcon: CustomSuffixIcon(svgIcon: 'assets/icons/Location point.svg'),
           ),
         );
   }
 
   TextFormField buildPhoneNumberFormField() {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return TextFormField(
           keyboardType: TextInputType.number,
           onSaved: (newValue) => photoNumber = newValue!,
           onChanged: (value) {
             if (value.isNotEmpty){
-              removeError(error: kPhoneNumberNullError);
+              removeError(error: T.kPhoneNumberNullError);
             }
           },
           validator: (value) {
             if(value!.isEmpty){
-              addError(error: kPhoneNumberNullError);
+              addError(error: T.kPhoneNumberNullError);
               return "";
             }
             return null;
           },
           decoration: InputDecoration(
-            labelText: "Photo Number",
-            hintText: "Enter your photo number",
+            labelText: T.completeProfilePhone,
+            hintText: T.completeProfilePhonePlaceholder,
             suffixIcon: CustomSuffixIcon(svgIcon: 'assets/icons/Phone.svg'),
           ),
         );
   }
 
   TextFormField buildLastNameFormField() {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return TextFormField(
           onSaved: (newValue) => lastName = newValue!,
           decoration: InputDecoration(
-            labelText: "Last Name",
-            hintText: "Enter your last name",
+            labelText: T.completeProfileLastname,
+            hintText: T.completeProfileLastnamePlaceholder,
             suffixIcon: CustomSuffixIcon(svgIcon: 'assets/icons/User.svg'),
           ),
         );
   }
 
   TextFormField buildFirstNameFormField() {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return TextFormField(
           onSaved: (newValue) => firstName = newValue!,
           onChanged: (value) {
             if (value.isNotEmpty){
-              removeError(error: kNameNullError);
+              removeError(error: T.kNameNullError);
             }
           },
           validator: (value) {
             if(value!.isEmpty){
-              addError(error: kNameNullError);
+              addError(error: T.kNameNullError);
               return "";
             }
             return null;
           },
           decoration: InputDecoration(
-            labelText: "First Name",
-            hintText: "Enter your first name",
+            labelText: T.completeProfileFirstname,
+            hintText: T.completeProfileFirstnamePlaceholder,
             suffixIcon: CustomSuffixIcon(svgIcon: 'assets/icons/User.svg'),
           ),
         );

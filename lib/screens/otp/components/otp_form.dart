@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_core/components/default_button.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -43,6 +44,7 @@ class _OtpFormState extends State<OtpForm> {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Form(
       child: Column(
         children: [
@@ -110,7 +112,7 @@ class _OtpFormState extends State<OtpForm> {
           ),
           SizedBox(height: SizeConfig.screenHeight * 0.15),
           DefaultButton(
-            text: "Continue",
+            text: T.otpContinue,
             press: () {}
           ),
         ],

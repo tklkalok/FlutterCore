@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import 'components/body.dart';
 
@@ -8,10 +9,11 @@ class CompleteProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Complete Profile"
+          T.completeProfileTitle
         ),
         centerTitle: true,
       ),

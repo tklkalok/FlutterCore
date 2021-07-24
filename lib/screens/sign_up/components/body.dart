@@ -3,12 +3,14 @@ import 'package:flutter_core/components/social_card.dart';
 import 'package:flutter_core/constants.dart';
 import 'package:flutter_core/screens/sign_up/components/sign_up_form.dart';
 import 'package:flutter_core/size_config.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 class Body extends StatelessWidget {
   const Body({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return SizedBox(
       width: double.infinity,
       child: SingleChildScrollView(
@@ -18,11 +20,11 @@ class Body extends StatelessWidget {
             children: [
               SizedBox(height: SizeConfig.screenHeight * 0.02),
               Text(
-                "Register Account",
+                T.signUpBodyTitle,
                 style: headingStyle,
               ),
               Text(
-                "Complete your detail or continue \nwith social media",
+                T.signUpBodySubTitle,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: SizeConfig.screenHeight * 0.07),
@@ -50,9 +52,10 @@ class Body extends StatelessWidget {
               ),
               SizedBox(height: getProportionateScreenHeight(20)),
               Text(
-                "By continuing your confirm that you agree \nwith our Term and Condition",
+                T.signUpBodyFooter,
                 textAlign: TextAlign.center,
               ),
+              SizedBox(height: getProportionateScreenHeight(20)),
             ],
           ),
         ),
