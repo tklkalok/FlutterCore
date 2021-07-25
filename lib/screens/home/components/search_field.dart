@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -10,6 +11,7 @@ class SearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Container(
       width: SizeConfig.screenWidth * 0.6,
       // height: 50,
@@ -24,7 +26,7 @@ class SearchField extends StatelessWidget {
         decoration: InputDecoration(
           enabledBorder: InputBorder.none,
           focusedBorder: InputBorder.none,
-          hintText: "Search Product",
+          hintText: T.homeSearchPlaceholder,
           prefixIcon: Icon(
             Icons.search,
             color: Colors.grey

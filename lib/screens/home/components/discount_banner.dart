@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import '../../../size_config.dart';
 
@@ -9,6 +10,7 @@ class DiscountBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Container(
       margin: EdgeInsets.symmetric(
         horizontal: getProportionateScreenWidth(20), 
@@ -25,13 +27,13 @@ class DiscountBanner extends StatelessWidget {
       ),
       child: Text.rich(
         TextSpan(
-          text: "A Summer Surpise\n",
+          text: T.homeDiscountBannerRow1,
           style: TextStyle(
             color: Colors.white,
           ),
           children: [
             TextSpan(
-              text: "Cashback 20%",
+              text: T.homeDiscountBannerRow2,
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,

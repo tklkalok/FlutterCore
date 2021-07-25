@@ -73,5 +73,28 @@
     "otpSubTitle": "We sent your code to +1 898 860 ***",
     "otpResend": "Resend OTP Code",
     "otpExpire": "This code will expired in ",
-    "otpContinue": "Continue"
+    "otpContinue": "Continue",
+
+    "@___HOME_PAGE___":{},
+    "homeSearchPlaceholder": "Search Product",
+    "homeDiscountBannerRow1": "A Summer Surpise\n",
+    "homeDiscountBannerRow2": "Cashback 20%",
+    "homeCategory1": "Flash Deal",
+    "homeCategory2": "Bill",
+    "homeCategory3": "Game",
+    "homeCategory4": "Daily Gift",
+    "homeCategory5": "More",
+    "homeSeeMore": "See More",
+    "homeSpecialOfferTitle": "Special for you",
+    "homeSpecialSmartphone": "Smartphones",
+    "homeSpecialFashion": "Fashion",
+    "homeSpecialBrands": "{numOfBrands} Brands",
+    "@homeSpecialBrands": {
+        "placeholders": {
+            "numOfBrands": {
+                "type": "String"
+            }
+        }
+    },
+    "homePopularProductTitle": "Popular Product"
 }

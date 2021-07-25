@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import '../../../size_config.dart';
 
@@ -13,6 +14,7 @@ class SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: getProportionateScreenWidth(20),
@@ -29,7 +31,7 @@ class SectionTitle extends StatelessWidget {
           ),
           GestureDetector(
             onTap: press,
-            child: Text("See More"),
+            child: Text(T.homeSeeMore),
           )
         ],
       ),

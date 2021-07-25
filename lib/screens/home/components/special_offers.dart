@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_core/screens/home/components/section_title.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import '../../../size_config.dart';
 
@@ -10,10 +11,11 @@ class SpecialOffers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Column(
       children: [
         SectionTitle(
-          text: "Special for you",
+          text: T.homeSpecialOfferTitle,
           press: (){},
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
@@ -22,13 +24,13 @@ class SpecialOffers extends StatelessWidget {
           child: Row(
             children: [
               SpecialOfferCard(
-                category: "Smartphones",
+                category: T.homeSpecialSmartphone,
                 image: "assets/images/Image Banner 2.png", 
                 numOfBrands: 18,
                 press: () {},
               ),
               SpecialOfferCard(
-                category: "Fashion",
+                category: T.homeSpecialFashion,
                 image: "assets/images/Image Banner 3.png", 
                 numOfBrands: 24,
                 press: () {},
@@ -57,6 +59,7 @@ class SpecialOfferCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Padding(
       padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
       child: SizedBox(
@@ -98,8 +101,11 @@ class SpecialOfferCard extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+                      // TextSpan(
+                      //   text: "$numOfBrands Brands"
+                      // )
                       TextSpan(
-                        text: "$numOfBrands Brands"
+                        text: T.homeSpecialBrands(numOfBrands.toString())
                       )
                     ],
                   ),

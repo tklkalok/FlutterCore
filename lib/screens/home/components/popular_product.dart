@@ -3,6 +3,7 @@ import 'package:flutter_core/components/product_card.dart';
 import 'package:flutter_core/models/Product.dart';
 import 'package:flutter_core/screens/details/details_screen.dart';
 import 'package:flutter_core/screens/home/components/section_title.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import '../../../size_config.dart';
 
@@ -13,10 +14,11 @@ class PopularProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Column(
       children: [
         SectionTitle(
-          text: "Popular Product", 
+          text: T.homePopularProductTitle, 
           press: () {}
         ),
         SizedBox(height: getProportionateScreenWidth(20)),

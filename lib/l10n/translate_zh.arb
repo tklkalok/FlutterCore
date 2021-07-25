@@ -73,5 +73,21 @@
     "otpSubTitle": "我們將你的代碼發送到了 +1 898 860 ***",
     "otpResend": "重新發送一次性密碼代碼",
     "otpExpire": "代碼有效期還剩: ",
-    "otpContinue": "繼續"
+    "otpContinue": "繼續",
+
+    "@___HOME_PAGE___":{},
+    "homeSearchPlaceholder": "搜索產品",
+    "homeDiscountBannerRow1": "夏天的驚喜\n",
+    "homeDiscountBannerRow2": "現金返還 20%",
+    "homeCategory1": "閃電交易",
+    "homeCategory2": "賬單",
+    "homeCategory3": "游戲",
+    "homeCategory4": "每日禮物",
+    "homeCategory5": "更多",
+    "homeSeeMore": "更多",
+    "homeSpecialOfferTitle": "為你而設",
+    "homeSpecialSmartphone": "智能手機",
+    "homeSpecialFashion": "時尚",
+    "homeSpecialBrands": "{numOfBrands} 個品牌",
+    "homePopularProductTitle": "熱門產品"
 }

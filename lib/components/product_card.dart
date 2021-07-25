@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_core/models/Product.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import '../constants.dart';
 import '../size_config.dart';
@@ -21,6 +22,7 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Padding(
       padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
       child: GestureDetector(
@@ -44,8 +46,23 @@ class ProductCard extends StatelessWidget {
                 constraints: BoxConstraints(
                   minHeight: 42
                 ),
+                // child: T.languageCode == 'en' 
+                // ? Text(
+                //   "${product.title}",
+                //   style: TextStyle(
+                //     color: Colors.black,
+                //   ),
+                //   maxLines: 2,
+                // )
+                // : Text(
+                //   "${product.title_zh}",
+                //   style: TextStyle(
+                //     color: Colors.black,
+                //   ),
+                //   maxLines: 2,
+                // ),
                 child: Text(
-                  "${product.title}",
+                  T.languageCode == 'en' ? "${product.title}" : "${product.title_zh}",
                   style: TextStyle(
                     color: Colors.black,
                   ),
