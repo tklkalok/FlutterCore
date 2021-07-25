@@ -4,6 +4,7 @@ import 'package:flutter_core/components/default_button.dart';
 import 'package:flutter_core/components/form_error.dart';
 import 'package:flutter_core/components/no_account_text.dart';
 import 'package:flutter_core/size_config.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import '../../../constants.dart';
 
@@ -11,6 +12,7 @@ class Body extends StatelessWidget {
   const Body({ Key? key }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return SizedBox(
       width: double.infinity,
       child: SingleChildScrollView(
@@ -20,7 +22,7 @@ class Body extends StatelessWidget {
             children: [
               SizedBox(height: SizeConfig.screenHeight * 0.04),
               Text(
-                "Forgot Password",
+                T.forgetPasswordTitle,
                 style: TextStyle(
                   fontSize: getProportionateScreenWidth(28),
                   color: Colors.black,
@@ -28,7 +30,7 @@ class Body extends StatelessWidget {
                 ),
               ),
               Text(
-                "Please enter your email and we will send \nyou a link to return to your account",
+                T.forgetPasswordSubTitle,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: SizeConfig.screenHeight * 0.1),
@@ -54,6 +56,7 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
   late String email;
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Form(
       key: _formKey,
       child: Column(
@@ -87,8 +90,8 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
               return null;
             },
             decoration: InputDecoration(
-              labelText: "Email",
-              hintText: "Enter you email",
+              labelText: T.forgetPasswordEmailTitle,
+              hintText: T.forgetPasswordEmailPlaceholder,
               suffixIcon: CustomSuffixIcon(svgIcon: 'assets/icons/Mail.svg'),
             ),
           ),
@@ -96,7 +99,7 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
           FormError(errors: errors),
           SizedBox(height: SizeConfig.screenHeight * 0.1),
           DefaultButton(
-            text: "Continue",
+            text: T.forgetPasswordContinue,
             press: (){
               if (_formKey.currentState!.validate()){
                 //Call API

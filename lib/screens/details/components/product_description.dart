@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_core/models/Product.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -18,6 +19,7 @@ class ProductDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -26,7 +28,7 @@ class ProductDescription extends StatelessWidget {
             horizontal: getProportionateScreenWidth(20)
           ),
           child: Text(
-            product.title,
+            T.languageCode == 'en' ? product.title : product.title_zh,
             style: Theme.of(context).textTheme.headline6,
           ),
         ),
@@ -59,7 +61,7 @@ class ProductDescription extends StatelessWidget {
             right: getProportionateScreenWidth(64),
           ),
           child: Text(
-            product.description,
+            T.languageCode == 'en' ? product.description : product.description_zh,
             maxLines: 3,
           ),
         ),
@@ -73,7 +75,7 @@ class ProductDescription extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  "See More Detail",
+                  T.detailSeeMoreDetail,
                   style: TextStyle(
                     color: kPrimaryColor,
                     fontWeight: FontWeight.w600,

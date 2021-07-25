@@ -96,5 +96,16 @@
             }
         }
     },
-    "homePopularProductTitle": "Popular Product"
+    "homePopularProductTitle": "Popular Product",
+
+    "@___DETAIL_PAGE___":{},
+    "detailSeeMoreDetail": "See More Detail",
+    "detailAddToCartBtnText": "Add to Cart",
+
+    "@___FORGET_PASSWORD_PAGE___":{},
+    "forgetPasswordTitle": "Forgot Password",
+    "forgetPasswordSubTitle": "Please enter your email and we will send \nyou a link to return to your account",
+    "forgetPasswordEmailTitle": "Email",
+    "forgetPasswordEmailPlaceholder": "Enter you email",
+    "forgetPasswordContinue": "Continue"
 }

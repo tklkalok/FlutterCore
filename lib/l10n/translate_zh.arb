@@ -89,5 +89,16 @@
     "homeSpecialSmartphone": "智能手機",
     "homeSpecialFashion": "時尚",
     "homeSpecialBrands": "{numOfBrands} 個品牌",
-    "homePopularProductTitle": "熱門產品"
+    "homePopularProductTitle": "熱門產品",
+
+    "@___DETAIL_PAGE___":{},
+    "detailSeeMoreDetail": "更多細節",
+    "detailAddToCartBtnText": "添加到購物車",
+
+    "@___FORGET_PASSWORD_PAGE___":{},
+    "forgetPasswordTitle": "忘記密碼",
+    "forgetPasswordSubTitle": "請輸入你的電子郵件，我們將向你發送一個鏈接以恢復你的賬戶",
+    "forgetPasswordEmailTitle": "電郵",
+    "forgetPasswordEmailPlaceholder": "輸入你的電郵",
+    "forgetPasswordContinue": "繼續"
 }

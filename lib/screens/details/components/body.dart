@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_core/components/default_button.dart';
 import 'package:flutter_core/models/Product.dart';
+import 'package:flutter_gen/gen_l10n/translate.dart';
 
 import '../../../size_config.dart';
 import 'color_dots.dart';
@@ -18,6 +19,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations T = AppLocalizations.of(context)!;
     return Column(
       children: [
         ProductImages(product: product),
@@ -48,7 +50,7 @@ class Body extends StatelessWidget {
                               bottom: getProportionateScreenWidth(40),
                             ),
                             child: DefaultButton(
-                              text: "Add to Cart",
+                              text: T.detailAddToCartBtnText,
                               press: () {},
                             ),
                           ),
