@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_core/screens/home/components/popular_product.dart';
+import 'package:flutter_core/screens/home/components/special_movie.dart';
 import 'package:flutter_core/screens/home/components/special_offers.dart';
 
 import '../../../size_config.dart';
@@ -11,6 +12,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       child: SingleChildScrollView(
         child: Column(
@@ -26,9 +28,13 @@ class Body extends StatelessWidget {
             SizedBox(height: getProportionateScreenWidth(30)),
             PopularProducts(),
             SizedBox(height: getProportionateScreenWidth(30)),
+            SpecialMovies(),
+            SizedBox(height: getProportionateScreenWidth(30)),
           ],
         ),
       ),
     );
   }
 }
+
+
