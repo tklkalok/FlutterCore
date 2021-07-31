@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 
 class ApiBaseHelper {
-  final String _baseUrl = 'api.themoviedb.org';
+  final String _baseUrl = 'http://api.themoviedb.org/3';
 
-  Future<dynamic> get(String subPath, Map<String, dynamic> params) async {
+  Future<dynamic> get(String subPath) async {
     var responseJson;
-    Uri requestUri = new Uri.http(_baseUrl, '/3'+subPath, params);
+    Uri requestUri = Uri.parse('$_baseUrl$subPath');
     try {
       final response = await http.get(requestUri);
       responseJson = _returnResponse(response);
