@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_core/models/Movie.dart';
+import 'package:flutter_core/models/movie.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../constants.dart';

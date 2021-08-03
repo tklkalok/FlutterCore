@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:flutter_core/helper/apiResponse.dart';
-import 'package:flutter_core/models/Movie.dart';
+import 'package:flutter_core/models/apiResponse.dart';
+import 'package:flutter_core/models/movie.dart';
 import 'package:flutter_core/repository/movieRepository.dart';
 
 class MovieBloc {

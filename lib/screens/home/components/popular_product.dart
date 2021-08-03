@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_core/components/product_card.dart';
-import 'package:flutter_core/models/Product.dart';
+import 'package:flutter_core/models/product.dart';
 import 'package:flutter_core/screens/details/details_screen.dart';
 import 'package:flutter_core/screens/home/components/section_title.dart';
 import 'package:flutter_gen/gen_l10n/translate.dart';

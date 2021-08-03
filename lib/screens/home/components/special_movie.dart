@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_core/bloc/movieBloc.dart';
 import 'package:flutter_core/components/movie_card.dart';
-import 'package:flutter_core/helper/apiResponse.dart';
-import 'package:flutter_core/models/Movie.dart';
+import 'package:flutter_core/models/apiResponse.dart';
+import 'package:flutter_core/models/movie.dart';
 import 'package:flutter_core/screens/home/components/section_title.dart';
 
 import '../../../size_config.dart';

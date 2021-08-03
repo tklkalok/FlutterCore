@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_core/components/default_button.dart';
 import 'package:flutter_core/constants.dart';
-import 'package:flutter_core/models/Cart.dart';
+import 'package:flutter_core/models/cart.dart';
 import 'package:flutter_core/size_config.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

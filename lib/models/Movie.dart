@@ -7,12 +7,12 @@ class Movie{
   late String releaseDate;
 
   Movie.fromJson(Map<String, dynamic> json){
-    id = json['id'];
-    voteAverage = json['vote_average'];
-    title = json['title'];
-    posterPath = json['poster_path'];
-    overview = json['overview'];
-    releaseDate = json['release_date'];
+    id = json['id'] ?? '';
+    voteAverage = json['vote_average'] ?? '';
+    title = json['title'] ?? '';
+    posterPath = json['poster_path'] ?? '';
+    overview = json['overview'] ?? '';
+    releaseDate = json['release_date'] ?? '';
   }
 }
 
@@ -21,11 +21,15 @@ class MovieResponse {
   late List<Movie> results;
 
   MovieResponse.fromJson(Map<String, dynamic> json){
-    //print(json);
+    // print(json);
     totalResults = json['total_results'];
     if (json['results'] != null){
+      // var test = Movie.fromJson(json['results'][0]);
+      // print(test);
       results = new List<Movie>.generate(json['results'].length, 
-        (index) => new Movie.fromJson(json['results'][index])
+        (index) {
+          return new Movie.fromJson(json['results'][index]);
+        }
       );
     }
   }
