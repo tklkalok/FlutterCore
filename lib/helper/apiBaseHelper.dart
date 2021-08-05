@@ -8,6 +8,7 @@ class ApiBaseHelper {
   Future<dynamic> get(String subPath) async {
     var responseJson;
     Uri requestUri = Uri.parse('$_baseUrl$subPath');
+    // print('$_baseUrl$subPath');
     try {
       final response = await http.get(requestUri);
       responseJson = _returnResponse(response);

@@ -8,8 +8,8 @@ import 'package:flutter_core/screens/home/components/section_title.dart';
 
 import '../../../size_config.dart';
 
-class SpecialMovies extends StatefulWidget {
-  const SpecialMovies({
+class LatestMovies extends StatefulWidget {
+  const LatestMovies({
     Key? key,
     // required this.MovieData,
   }) : super(key: key);
@@ -17,10 +17,10 @@ class SpecialMovies extends StatefulWidget {
   // final Map<String, dynamic> MovieData;
 
   @override
-  _SpecialMoviesState createState() => _SpecialMoviesState();
+  _LatestMoviesState createState() => _LatestMoviesState();
 }
 
-class _SpecialMoviesState extends State<SpecialMovies> {
+class _LatestMoviesState extends State<LatestMovies> {
   late MovieBloc _bloc;
 
   @override
@@ -34,7 +34,7 @@ class _SpecialMoviesState extends State<SpecialMovies> {
     return Column(
       children: [
         SectionTitle(
-          text: 'Special Movies', 
+          text: 'Latest Movies', 
           press: (){}
         ),
         SizedBox(height: getProportionateScreenWidth(20)),

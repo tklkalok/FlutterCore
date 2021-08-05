@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_core/screens/home/components/popular_product.dart';
-import 'package:flutter_core/screens/home/components/special_movie.dart';
+import 'package:flutter_core/screens/home/components/latest_movie.dart';
+import 'package:flutter_core/screens/home/components/hot_movie.dart';
 import 'package:flutter_core/screens/home/components/special_offers.dart';
 
 import '../../../size_config.dart';
@@ -28,7 +29,9 @@ class Body extends StatelessWidget {
             SizedBox(height: getProportionateScreenWidth(30)),
             PopularProducts(),
             SizedBox(height: getProportionateScreenWidth(30)),
-            SpecialMovies(),
+            LatestMovies(),
+            SizedBox(height: getProportionateScreenWidth(30)),
+            HotMovies(),
             SizedBox(height: getProportionateScreenWidth(30)),
           ],
         ),
